@@ -1,6 +1,6 @@
 # Projeto Sistema de disco
 
-**O que ainda há de ser feito? **
+**O que ainda há de ser feito?**
 1 - formatar unidade
 2 - corrigir unidade
 3 - mostrar configde disco sandisk
