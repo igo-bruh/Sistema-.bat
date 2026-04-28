@@ -10,3 +10,5 @@
 7 - montar pendrive bootavel
 # Obs
 **O arquivo bat atual so commitei por base msm ent eh so a base logo n tem mta coisa nova, sinta-se a vontade para mudar**
+# regras
+**ser feliz**
