@@ -1,5 +1,17 @@
 @echo off
+:Vmenu
+cls
+echo 1 - texto azul e tela preta, 10 para texto preto e tela azul
+echo
+echo
+echo
+echo
+echo
+set /p cor = selecione uma cor:
+
 :menu
+cls
+color %cor%
 echo =========================
 echo Bem vindo ao menu inicial
 echo =========================
