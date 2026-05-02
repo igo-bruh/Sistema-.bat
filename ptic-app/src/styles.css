@@ -24,6 +24,23 @@ header{
 .main-h1{
   font-size: var(--font-hypertitle);
   margin: 20px 0;
+  letter-spacing: 10px;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typyng 2s steps(14), cursor .4s step-end infinite alternate;
+
+}
+@keyframes cursor{
+  50%{
+    border-color: transparent;
+  }
+}
+@keyframes typyng{
+  from{
+    width: 0;
+  }
 }
 .gite{
   width: 100%;
@@ -78,4 +95,68 @@ header{
 .gite:hover{
   transform: scale(1.1);
   transition: transform 0.3s;
+}
+.inputsearch{
+  padding: 5px;
+  border: none;
+  transition: all 0.5s;
+  border-radius: 5px;
+  
+}
+.inputsearch:focus{
+  outline: none;
+  transform: scale(1.04);
+  box-shadow: 0 0 5px var(--maisclarocinza);
+}
+.searchdown{
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--clarocinza);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.searchdown:hover{
+  background-color: var(--maisclarocinza);
+  transform: scale(1.1);
+}
+.cont-main-h1{
+  display: inline-block;
+}
+.action{
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: var(--clarocinza);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+.action img{
+  width: 100%;
+  height: auto;
+  max-height: 194px;
+  border-radius: 20px;
+}
+.action p{
+  margin: 10px 0 0;
+  font-size: var(--fontbasesize);
+}
+.action:hover{
+  background-color: var(--maisclarocinza);
+  transform: scale(1.05);
+} 
+.action:active{
+  background-color: var(--maisclarocinza);
+  transform: scale(0.95);
+}
+.quickatitle{
+  font-size: var(--fontbasesize);
+  margin: 10px 0;
 }

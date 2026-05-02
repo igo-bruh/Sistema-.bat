@@ -1,18 +1,23 @@
-const { invoke } = window.__TAURI__.core;
+import { invoke } from '@tauri-apps/api/core';
 
-let greetInputEl;
-let greetMsgEl;
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
+function openCmd() {
+  invoke('open_cmd');
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
+function scandisk(){
+  invoke('scandisk');
+}
+
+// Listeners para os botões
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('terminal-btn').addEventListener('click', () => {
+    invoke('open_cmd');
+  });
+  document.getElementById('scandisk-btn').addEventListener('click', scandisk);
+  document.getElementById('clean').addEventListener('click', () => {
+    invoke('clean_temp_files');
+  });
+  document.getElementById('update').addEventListener('click', () => {
+    invoke('update_drivers');
   });
 });
