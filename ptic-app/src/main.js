@@ -1,4 +1,11 @@
-import { invoke } from '@tauri-apps/api/core';
+let safeInvoke = () => {};
+
+try {
+  const tauri = await import('@tauri-apps/api/core');
+  safeInvoke = tauri.invoke;
+} catch (e) {
+  console.warn('Tauri não disponível');
+}
 
 function openCmd() {
   invoke('open_cmd');
@@ -20,4 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('update').addEventListener('click', () => {
     invoke('update_drivers');
   });
+});
+document.addEventListener('DOMContentLoaded', () => {
+let guer = document.getElementById('hamburger');
+let menu = document.getElementById('sidemenu');
+let close = document.getElementById('btn-close');
+let overlay = document.getElementById('overlay');
+guer.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  overlay.classList.toggle('active');
+});
+close.addEventListener('click', () => {
+  menu.classList.remove('open');
+  overlay.classList.remove('active');
+});
+overlay.addEventListener('click', () => {
+  menu.classList.remove('open');
+  overlay.classList.remove('active');
+});
+console.log(guer, menu, close, overlay);
 });

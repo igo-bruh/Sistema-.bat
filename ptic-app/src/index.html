@@ -3,18 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
-  <script type="module"></script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>System Data Hub</title>
 </head>
+
 <body>
+  <div id="overlay" class="overlay"></div>
   <audio loop autoplay>
     <source src="img/doors-elevator-music.mp3" type="audio/mpeg">
   </audio>
   <header class="header">
     <article class="container-header">
       <div class="left-content">
-      <h1>System Data Hub</h1> 
+        
+        <button class="btn-menu" id="hamburger">
+         ☰
+        </button>
+       <aside class="sidemenu" id="sidemenu">
+        <div class="sidemenuheader">
+          <h2>Sys Menu</h2>
+          <button class="close-btn" id="btn-close">×</button>
+        </div>
+        <nav>
+          <a href="#documentacao">Dashboard</a>
+          <a href="#tutoriais">Scripts</a>
+          <a href="#sobre">configurações</a>
+          <a href="#contato">Sistema</a>
+          <a href="#funciona">Funcionamento</a>
+        </nav>
+       </aside>
+        <h1>System Data Hub</h1> 
       <img src="#logo" alt="">     
       
       <a href="#documentacao">Documentação</a>
@@ -41,7 +60,7 @@
         <article class="quickaction">
         <h1 class="quickatitle">Ações Rápidas</h1>
         <div class="acoescont">
-          <a onclick="open_cmd()" id="terminal-btn" class="action">
+          <a onclick="openCmd()" id="terminal-btn" class="action">
             <img src="img/terminal.png" alt="">
             <p>Terminal</p>
           </a>
@@ -64,6 +83,6 @@
         
         
       </section>
-  <script type="module" src="main.js"></script>
+  <script type="module" defer src="main.js"></script>
 </body>
 </html>
