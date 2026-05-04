@@ -19,7 +19,7 @@ if "%cor%"=="2" color 10
 :menu
 
 
-
+::oi para eu te salvar:"ctrl+S" abrir terminal:"ctrl+"""
 cls
 echo.
 echo                ===================================================
