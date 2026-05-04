@@ -263,3 +263,10 @@ visibility: hidden;
   background-color: var(--maisclarocinza);
   transform: scale(1.05);
 }
+.GIF img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 20px;
+ border-radius: 10px; 
+}

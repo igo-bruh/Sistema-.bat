@@ -1,11 +1,5 @@
-let safeInvoke = () => {};
+const { invoke } = window.__TAURI__.tauri;
 
-try {
-  const tauri = await import('@tauri-apps/api/core');
-  safeInvoke = tauri.invoke;
-} catch (e) {
-  console.warn('Tauri não disponível');
-}
 
 function openCmd() {
   invoke('open_cmd');
@@ -16,10 +10,10 @@ function scandisk(){
 }
 
 // Listeners para os botões
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('terminal-btn').addEventListener('click', () => {
-    invoke('open_cmd');
-  });
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.getElementById('terminal-btn').addEventListener('click', () => {
+//     invoke('open_cmd');
+//   });
   document.getElementById('scandisk-btn').addEventListener('click', scandisk);
   document.getElementById('clean').addEventListener('click', () => {
     invoke('clean_temp_files');
@@ -27,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('update').addEventListener('click', () => {
     invoke('update_drivers');
   });
-});
 document.addEventListener('DOMContentLoaded', () => {
 let guer = document.getElementById('hamburger');
 let menu = document.getElementById('sidemenu');
@@ -46,4 +39,7 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 console.log(guer, menu, close, overlay);
+});
+document.getElementById('terminal-btn').addEventListener('click', () => {
+  invoke('open_cmd');
 });
