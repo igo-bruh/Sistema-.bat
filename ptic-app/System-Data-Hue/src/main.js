@@ -1,11 +1,4 @@
-let safeInvoke = () => {};
-
-try {
-  const tauri = await import('@tauri-apps/api/core');
-  safeInvoke = tauri.invoke;
-} catch (e) {
-  console.warn('Tauri não disponível');
-}
+// import { invoke } from '@tauri-apps/api/tauri';
 
 function openCmd() {
   invoke('open_cmd');
