@@ -1,25 +1,3 @@
-// import { invoke } from '@tauri-apps/api/tauri';
-
-function openCmd() {
-  invoke('open_cmd');
-}
-
-function scandisk(){
-  invoke('scandisk');
-}
-
-// Listeners para os botões
-// document.addEventListener('DOMContentLoaded', () => {
-//   document.getElementById('terminal-btn').addEventListener('click', () => {
-//     invoke('open_cmd');
-//   });
-  document.getElementById('scandisk-btn').addEventListener('click', scandisk);
-  document.getElementById('clean').addEventListener('click', () => {
-    invoke('clean_temp_files');
-  });
-  document.getElementById('update').addEventListener('click', () => {
-    invoke('update_drivers');
-  });
 document.addEventListener('DOMContentLoaded', () => {
 let guer = document.getElementById('hamburger');
 let menu = document.getElementById('sidemenu');
@@ -42,3 +20,17 @@ console.log(guer, menu, close, overlay);
 document.getElementById('terminal-btn').addEventListener('click', () => {
   invoke('open_cmd');
 });
+// function teste(){
+//   let negoco = document.getElementById("pop");
+//   neg
+// }
+window.addEventListener('load', function(){
+  window.location.href="index.html#pop"
+  setTimeout(() => {
+    window.location.href="index.html"
+  }, 30000);
+})
+let cu = document.getElementById("cu");
+cu.addEventListener('click', function(){
+  window.location.href="#"
+}) 

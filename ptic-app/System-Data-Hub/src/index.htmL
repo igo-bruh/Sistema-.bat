@@ -6,9 +6,19 @@
   <script type="module" src="main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>System Data Hub</title>
+  <script src="script.js"></script>
+  <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
 </head>
 
 <body>
+  <div class="popup" id="pop">
+    <div class="textpopup">
+      <h1>Bem vindo ao nosso SDH</h1>
+    </div>
+    <div class="fechar">
+      <a href="index.htmL" class="btn-fecha" id="cu">Ok, Obrigado!</a>
+    </div>
+  </div>
   <div id="overlay" class="overlay"></div>
   <audio loop autoplay>
     <source src="img/doors-elevator-music.mp3" type="audio/mpeg">
@@ -26,7 +36,7 @@
           <button class="close-btn" id="btn-close">×</button>
         </div>
         <nav>
-          <a href="#documentacao">Dashboard</a>
+          <a href="#pop" >Dashboard</a>
           <a href="#tutoriais">Scripts</a>
           <a href="#sobre">configurações</a>
           <a href="#contato">Sistema</a>
