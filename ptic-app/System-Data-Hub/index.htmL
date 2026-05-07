@@ -2,18 +2,40 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="main.js"></script>
+  <link rel="stylesheet" href="src/styles.css">
+  <script type="module" src="src/main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>System Data Hub</title>
-  <script src="script.js"></script>
-  <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
+  <script src="src/script.js"></script>
+  <link rel="shortcut icon" href="src/img/logo.webp" type="image/x-icon">
 </head>
 
 <body>
+  <div class="popup" id="alert">
+        <div class="textpopup">
+      <h1>Calminha ai!</h1>
+      <p>Este comando esta prestes a formatar uma unidade</p>
+    </div>
+    <div class="fechar">
+      <a href="#escolha" class="btn-fecha" id="choice">estou ciente</a>
+      <a href="#" class="btn-fecha" id="cancel">Cancelar</a>
+    </div>
+  </div>
+    <div class="popup" id="escolha">
+        <div class="textpopup">
+      <h1>Escolha a unidade</h1>
+
+    </div>
+    <div class="fechar-format">
+          <a href="#pop" id="formatC" class="btn-fecha">C:</a>
+          <a href="#pop" id="formatD" class="btn-fecha">D:</a>
+          <a href="#pop" id="formatF" class="btn-fecha">F:</a>
+          <a href="#pop" id="formatG" class="btn-fecha">G:</a>
+    </div>
+  </div>
   <div class="popup" id="pop">
     <div class="textpopup">
-      <h1>Bem vindo ao nosso SDH</h1>
+      <h1>Comando executado! Em caso de nada aparecer cheque seu terminal</h1>
     </div>
     <div class="fechar">
       <a href="index.htmL" class="btn-fecha" id="cu">Ok, Obrigado!</a>
@@ -21,7 +43,7 @@
   </div>
   <div id="overlay" class="overlay"></div>
   <audio loop autoplay>
-    <source src="img/doors-elevator-music.mp3" type="audio/mpeg">
+    <source src="src/img/doors-elevator-music.mp3" type="audio/mpeg">
   </audio>
   <header class="header">
     <article class="container-header">
@@ -36,14 +58,14 @@
           <button class="close-btn" id="btn-close">×</button>
         </div>
         <nav>
-          <a href="#pop" >Dashboard</a>
+          <a href="#pop" id="dash">Dashboard</a>
           <a href="#tutoriais">Scripts</a>
           <a href="#sobre">configurações</a>
           <a href="#contato">Sistema</a>
           <a href="#funciona">Funcionamento</a>
         </nav>
         <div class="GIF">
-          <img src="img/ahatintime-hatkid.gif" alt="">
+          <img src="src/img/ahatintime-hatkid.gif" alt="">
         </div>
        </aside>
         <h1>System Data Hub</h1> 
@@ -52,10 +74,10 @@
       <a href="#documentacao">Documentação</a>
       <a href="#tutoriais">Tutoriais</a>
       <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
+      <a id="menu" >menu</a>
       </div>
       <div class="right-content">
-      <a class="gitlink" target="_blank" title="repositorio" href="https://github.com/igo-bruh/Sistema-.bat"><img src="img/git.png" alt="" class="gite"></a>
+      <a class="gitlink" target="_blank" title="repositorio" href="https://github.com/igo-bruh/Sistema-.bat"><img src="src/img/git.png" alt="" class="gite"></a>
       <div class="input-container">
         <input class="inputsearch" type="text" placeholder="Pesquisar...">
         <button type="submit" class="searchdown">Pesquisar</button>
@@ -73,23 +95,23 @@
         <article class="quickaction">
         <h1 class="quickatitle">Ações Rápidas</h1>
         <div class="acoescont">
-          <a id="terminal-btn" class="action">
-            <img src="img/terminal.png" alt="">
+          <a href="#pop" id="terminal-btn" class="action">
+            <img src="src/img/terminal.png" alt="">
             <p>Terminal</p>
           </a>
-          <a id="scandisk-btn" class="action">
-            <img src="img/disk.png" alt="">
+          <a href="#pop" id="scandisk-btn" class="action">
+            <img src="src/img/disk.png" alt="">
             <p>Sandisk</p>
-          </a><a id="clean"  class="action">
-            <img src="img/clean.png" alt="">
+          </a><a href="#pop" id="clean"  class="action">
+            <img src="src/img/clean.png" alt="">
             <p>Limpeza de arquivos</p>
           </a>
-          <a id="update" class="action">
-            <img src="img/update.png" alt="">
+          <a href="#pop" id="update" class="action" >
+            <img src="src/img/update.png" alt="">
             <p>Atualizar drivers</p>
-          </a><a href="" class="action">
-            <img src="img/download.png" alt="">
-            <p>Opções de Downloads</p>
+          </a><a href="#alert" id="form" class="action">
+            <img src="src/img/download.png" alt="">
+            <p>Formatar</p>
           </a>
         </div>
         </article>
