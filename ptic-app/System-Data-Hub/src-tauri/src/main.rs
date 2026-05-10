@@ -6,7 +6,7 @@ use std::process::Command;
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![turnoff, restart, sleep, formatarc, formatard, formatarf, formatarg, attdriver, open_cmd, rodar, scandisk, scriptmenu, limpeza])
+        .invoke_handler(tauri::generate_handler![turnoff, restart, sleep, formatarc, formatard, formatarf, formatarg, attdriver, open_cmd, rodar, scandisk, scriptmenu, limpeza, redeip, cunitc, dunitd, funite, gunitg, Dvscode, Ddiscord, Dspotify, Dsteam, Dzapzap, Dfirefox])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -104,6 +104,83 @@ fn restart(){
 fn sleep(){
     Command::new("cmd")
         .args(["/C", "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn redeip(){
+    Command::new("cmd")
+        .args(["/C", "ipconfig /release && ipconfig /renew"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn cunitc(){
+    Command::new("cmd")
+        .args(["/C", "chkdsk C: /f /r"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn dunitd(){
+    Command::new("cmd")
+        .args(["/C", "chkdsk D: /f /r"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn funite(){
+    Command::new("cmd")
+        .args(["/C", "chkdsk F: /f /r"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn gunitg(){    
+    Command::new("cmd")
+        .args(["/C", "chkdsk G: /f /r"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Dvscode(){
+    Command::new("cmd")
+        .args(["/C", "winget install --id=Microsoft.VisualStudioCode -e --source=winget"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Ddiscord(){
+    Command::new("cmd")
+        .args(["/C", "winget install --id=Discord.Discord -e --source=winget"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Dspotify(){
+    Command::new("cmd")
+        .args(["/C", "winget install --id=Spotify.Spotify -e --source=winget"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Dsteam(){    
+    Command::new("cmd")
+        .args(["/C", "winget install --id=Valve.Steam -e --source=winget"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Dzapzap(){
+    Command::new("cmd")
+        .args(["/C", "winget install --id=WhatsApp.WhatsAppDesktop -e --source=winget"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn Dfirefox(){
+    Command::new("cmd")
+        .args(["/C", "winget install --id=Mozilla.Firefox -e --source=winget"])
         .spawn()
         .expect("Failed to run script");
 }

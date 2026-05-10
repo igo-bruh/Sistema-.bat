@@ -3,7 +3,7 @@ let guer = document.getElementById('hamburger');
 let menu = document.getElementById('sidemenu');
 let close = document.getElementById('btn-close');
 let overlay = document.getElementById('overlay');
-let turnoff = document.getElementById("turnoff");
+
 let turnbtn = document.getElementById("turnbtn");
 turnbtn.addEventListener('click', () => {
   turnoff.classList.toggle('active');
@@ -49,3 +49,7 @@ setInterval(() => {
   let hora =  new Date();
   time.textContent = hora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' } );
 }, 1000);
+const back =() => {
+  window.location.href = "index.html";
+}
+document.getElementById('off').addEventListener('click', back);

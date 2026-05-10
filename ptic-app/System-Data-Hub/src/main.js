@@ -58,5 +58,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-t').addEventListener('click', () => {
       invoke('turnoff')
     });
+    document.getElementById('redeip').addEventListener('click', () => {
+      invoke('redeip')
+    });
+    document.getElementById('CuC').addEventListener('click', () => {
+      invoke('cunitc')
+    });
+    document.getElementById('DuD').addEventListener('click', () => {
+      invoke('dunitd')
+    });
+    document.getElementById('FuF').addEventListener('click', () => {
+      invoke('funite')
+    });
+    document.getElementById('GuG').addEventListener('click', () => {
+      invoke('gunitg')
+    });
+    document.getElementById('vscode').addEventListener('click', () => {
+      invoke('Dvscode')
+    });
+    document.getElementById('discord').addEventListener('click', () => {
+      invoke('Ddiscord')
+    }); 
+    document.getElementById('spotify').addEventListener('click', () => {
+      invoke('Dspotify')
+    });
+    document.getElementById('firefox').addEventListener('click', () => {
+      invoke('Dfirefox')
+    });
+    document.getElementById('steam').addEventListener('click', () => {
+      invoke('Dsteam')
+    });
+    document.getElementById('zapzap').addEventListener('click', () => {
+      invoke('Dzapzap')
+    });
 });
 
