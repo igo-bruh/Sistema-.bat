@@ -36,7 +36,7 @@ header{
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  animation: typyng 2s steps(14), cursor .4s step-end infinite alternate;
+  animation: typyng 4s steps(14) infinite, cursor .4s step-end infinite alternate;
   margin-bottom: 40px;
   margin-top: 80px;
 
@@ -56,6 +56,49 @@ background-color: rgba(63, 69, 76, 0.5);
   padding: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+.desliga{
+  position:fixed;
+  top: 50%;
+  bottom: 50%;
+  transform: translateX(100%);
+  right: 0;
+  top: 40%;
+  width: 100px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: var(--clarocinza);
+  backdrop-filter: blur(2px);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+  transition: 0.3s;
+  z-index: 1000;
+}
+.desliga:hover{
+ transform: scale(1.1);
+  
+}
+.desliga.active{
+  transform: translateX(-2%) scale(0.95);
+}
+.btndesliga img{
+  border-radius: 20px;
+  position: relative;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  color: white;
+  font-size: var(--fontbasesize);
+  transition: all 0.3s;
+}
+.btndesliga img:hover{
+  transform: scale(1.1);
+}
+.btndesliga img:active{
+  transform: scale(0.95);
+}
+.btndesliga{
+  position: relative;
+  margin: 0;
 }
 .btn-menu:active{
   transform: scale(0.95);
@@ -112,7 +155,7 @@ visibility: hidden;
   align-items: center;
   padding: 10px;
  
-  background-color: var(--fundo)
+  background-color: var(--fundo);
 
 }
 .left-content{
@@ -143,7 +186,7 @@ visibility: hidden;
   bottom: -5px;
   transform: translateX(-50%);
   height: 2px;
-  background-color: white;
+  background: white;
   transition: width 0.3s;
 }
 .header a:hover::after{
@@ -243,6 +286,7 @@ visibility: hidden;
   font-size: var(--fontbasesize);
   margin-bottom: 20px;
   display: flex;
+  border-bottom: 2px solid var(--maisclarocinza);
   flex-direction: row;
   justify-content: space-between;
 }
@@ -320,10 +364,12 @@ right: 0;
   margin-bottom: 5px;
   font-size: var(--fontbasesize);
   transition: 0.3s all ;
+  flex: 1;
 }
 .btn-fecha:hover{
   box-shadow: 10px 0 20px rgba(0,0,0,0.5);
   transform: scale(1.1);
+  flex: 2;
 }
 .btn-fecha:active{
   transform: scale(0.95);

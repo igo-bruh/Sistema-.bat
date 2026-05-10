@@ -49,5 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('formatG').addEventListener('click', () => {
       invoke('formatarg')
     });
+    document.getElementById('btn-r').addEventListener('click', () => {
+      invoke('restart')
+    });
+    document.getElementById('btn-s').addEventListener('click', () => {
+      invoke('sleep')
+    });
+    document.getElementById('btn-t').addEventListener('click', () => {
+      invoke('turnoff')
+    });
 });
 

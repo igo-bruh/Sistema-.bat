@@ -6,7 +6,7 @@ use std::process::Command;
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![formatarc, formatard, formatarf, formatarg, attdriver, open_cmd, rodar, scandisk, scriptmenu, limpeza])
+        .invoke_handler(tauri::generate_handler![turnoff, restart, sleep, formatarc, formatard, formatarf, formatarg, attdriver, open_cmd, rodar, scandisk, scriptmenu, limpeza])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -83,6 +83,27 @@ fn formatarf(){
 fn formatarg(){
     Command::new("cmd")
         .args(["/C", "format G: /FS:NTFS /Q /V:NovaUnidade"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn turnoff(){
+    Command::new("cmd")
+        .args(["/C", "shutdown /s /t 5"])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn restart(){   
+    Command::new("cmd")
+        .args(["/C", "shutdown /r /t 5 "])
+        .spawn()
+        .expect("Failed to run script");
+}
+#[tauri::command]
+fn sleep(){
+    Command::new("cmd")
+        .args(["/C", "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"])
         .spawn()
         .expect("Failed to run script");
 }
