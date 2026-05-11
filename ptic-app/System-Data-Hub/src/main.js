@@ -74,22 +74,28 @@ document.addEventListener('DOMContentLoaded', () => {
       invoke('gunitg')
     });
     document.getElementById('vscode').addEventListener('click', () => {
-      invoke('Dvscode')
+      invoke('dvscode')
     });
     document.getElementById('discord').addEventListener('click', () => {
-      invoke('Ddiscord')
+      invoke('ddiscord')
     }); 
     document.getElementById('spotify').addEventListener('click', () => {
-      invoke('Dspotify')
+      invoke('dspotify')
     });
     document.getElementById('firefox').addEventListener('click', () => {
-      invoke('Dfirefox')
+      invoke('dfirefox')
     });
     document.getElementById('steam').addEventListener('click', () => {
-      invoke('Dsteam')
+      invoke('dsteam')
     });
     document.getElementById('zapzap').addEventListener('click', () => {
-      invoke('Dzapzap')
+      invoke('dzapzap')
+    });
+    document.getElementById('tarefa-btn').addEventListener('click', () => {
+      invoke('tarefa')
+    });
+    document.getElementById("powershell-btn").addEventListener('click', () => {
+      invoke('powershell')
     });
 });
 
